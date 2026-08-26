@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>Bài 4 : html</title>
+    </head>
+    <body>
+        <h1>Form</h1>
+        <form >
+            <!-- khi không thêm thuộc tính type vào thẻ input thì sẽ mặc định type='text' -->
+            <input>
+            <br>
+            <div>
+                <p>Họ và Tên : </p>
+                <input type="text" name="hoVaTen" >
+            </div>
+            <div>
+                <p>Giới thiệu bản thân : </p>
+                <textarea name="gioiThieu" ></textarea>
+            </div>
+            <div>
+                <p>Địa chỉ email : </p>
+                <input type="email" name="email" >
+            </div>
+            <div>
+                <p>Số điện thoại : </p>
+                <p>Định dạng số : số đầu 0 , số thứ hai 3 | 6 | 9 , 8 số cuối 0 đến 9 </p>
+                <input 
+                type="tel" 
+                name="sdt" 
+                placeholder="Nhập số điện thoại" 
+                required
+                pattern="0[369][0-9]{8}"
+                >
+            </div>
+            <div>
+                <p>Giới tính : </p>
+                <input type="radio" id="nam" name="gioiTinh" value="nam">
+                <label for="nam">Nam</label>
+                <input type="radio" id="nu" name="gioiTinh" value="nu">
+                <label for="nu">Nữ</label>
+            </div>
+            <div>
+                <p>Chọn sở thích : </p>
+                <input type="checkbox" id="theThao" name="soThich" value="theThao">
+                <label for="theThao">Thể thao</label>
+                <input type="checkbox" id="amNhac" name="soThich" value="amNhac">
+                <label for="amNhac">Âm nhạc</label>
+                <input type="checkbox" id="duLich" name="soThich" value="duLich">
+                <label for="duLich">Du lịch</label>
+            </div>
+            <div>
+                <input list="soThich">
+                <datalist id="soThich">
+                    <option value="Thể thao">
+                    <option value="Âm nhạc">
+                    <option value="Du lịch">
+                </datalist>
+            </div>
+            <div>
+                <p>Chọn quốc gia : </p>
+                <select name="quocGia">
+                    <option value="VietNam">Việt Nam</option>
+                    <option value="USA">Mỹ</option>
+                    <option value="Japan">Nhật Bản</option>
+                </select>
+            </div>
+            <div>
+                <p>Chọn độ tuổi : </p>
+                0<input type="range" name="tuoi" min="0" max="100"> 100
+            </div>
+            <div>
+                <input type="submit" value="Gửi">
+                <button type="reset">Nhập lại</button>
+            </div>
+        </form>
+        <iframe 
+            width="560" height="315" 
+            src="https://www.youtube.com/embed/G7qm9c76LgA?si=RkiBt_Pu_ee3zCxQ" 
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+            clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        <marquee>   
+            <img src="../img/banner1.jpg" alt="Hình ảnh">
+        </marquee>
+        <audio controls>
+            <source src="../img/audio.mp3" type="audio/mpeg">
+        </audio>
+        <video controls>
+            <source src="../img/video.mp4" type="video/mp4">    
+        </video>
+        <!-- Kí tự đặc biệt -->
+        <p>Copyright &copy; 2024</p>
+    </body>
+</html>
