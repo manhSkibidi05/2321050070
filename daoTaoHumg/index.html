@@ -3,9 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            padding : 0;
+            margin : 0;
+        }
+        a{
+            text-decoration: none;
+            color : white;
+        }
+        /* nav */
+        ul{
+            display : flex;
+        }
+        li{
+            list-style: none;
+            margin-left:20px;
+        }
+        div.nav{
+            background-color: #0dcaf0;
+            padding : 20px
+        }
+        
+        /* main */
+        div.main{
+            display : flex;
+        }
+        div.main-left{
+            width : 20%;
+            height : 100vh;
+            border-right : 2px solid #0dcaf0;
+            padding : 20px;
+        }
+        form{
+            display : flex;
+            flex-direction: column;
+        }
+        .form-username, .form-password{
+            display : flex;
+            flex-direction: column;
+        }
+        .form-forget{
+            margin-left :auto;
+            margin-top : 10px;
+            color : #0dcaf0;
+        }
+        input{
+            padding : 8px;
+            margin-top : 10px;
+            border-radius : 5px;
+        }
+        button.login{
+            background-color: #0dcaf0;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        button.login-365{
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        #home, #rate{
+            display : block;
+            padding : 8px;
+            margin-top : 10px;
+            color : #0dcaf0;
+            border-bottom : 1px solid #0dcaf0;
+        }
+        div.main-right{
+            width : 80%;
+        }
+        .main-right-block{
+            border : 1px solid #0dcaf0;
+            border-radius : 5px;
+            margin : 20px;
+            padding : 10px;
+        }
+        .main-right-block-header{
+            display : flex;
+            justify-content: space-between;
+            border-bottom : 1px solid #0dcaf0;
+            padding-bottom : 10px;
+        }
+        .main-right-block-content{
+            display:flex;
+        }
+        .block-content{
+            width : 200px;
+            margin-right : 40px;
+            margin-top : 20px;
+        }
+    </style>
     <title>Đào Tạo HUMG</title>
 </head>
 <body>
-    
+    <div class="nav">
+        <ul>
+            <li><a href="">Trang chủ</a></li>
+            <li><a href="">Thực tập , Đồ án</a></li>
+            <li><a href="">Thủ tục một cửa</a></li>
+            <li><a href="">Một cửa online</a></li>
+            <li><a href="">E-mail HUMG</a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="main-left">
+            <form action="">
+                <div class="form-username">
+                    <label for="username">Tài khoản </label>
+                    <input type="text" id="username" >
+                </div>
+                <div class="form-password">
+                    <label for="password">Mật khẩu </label>
+                    <input type="password" id="password">
+                </div>
+                <a class="form-forget" href="">Quên mật khẩu?</a>
+                <button class="login">Đăng nhập</button>
+                <button class="login-365">Đăng nhập với Microsoft office 365</button>
+            </form>
+            <a id="home" href="">Trang chủ</a>
+            <a id="rate" href="">Khảo sát đánh giá</a>
+            <img src="../img/humg-data.webp" alt="Hình ảnh dữ liệu HUMG" style="width: 70%; margin-top: 220px; margin-left: 15%;">
+        </div>
+        <div class="main-right">
+            <div class="main-right-block">
+                <div class="main-right-block-header">
+                    <p>Tin tức</p>
+                    <a style="color:#0dcaf0" href="">Xem thêm</a>
+                </div>
+                <div class="main-right-block-content">
+                    <div class="block-content">
+                        <img style="width: 100%; border-radius: 10px;" src="../img/banner1.jpg" alt="">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="height:1px ; width:100% ; background-color: gray;"></span>
+                            <span style="color:gray;margin-left: 10px;">15/4/2026</span>
+                        </div>
+                        <p style="margin-top: 10px;  font-size: 14px; color: gray;">Về việc đăng ký khối lượng học tập học kỳ phụ năm học 2025-2026</p>
+                    </div>
+                    <div class="block-content">
+                        <img style="width: 100%; border-radius: 10px;" src="../img/banner1.jpg" alt="">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="height:1px ; width:100% ; background-color: gray;"></span>
+                            <span style="color:gray;margin-left: 10px;">5/5/2026</span>
+                        </div>
+                        <p style="margin-top: 10px;  font-size: 14px; color: gray;">Về việc nghỉ học</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-right-block">
+                <div class="main-right-block-header">
+                    <p>Thông báo</p>
+                    <a style="color:#0dcaf0" href="">Xem thêm</a>
+                </div>
+                <div class="main-right-block-content">
+                    <div class="block-content">
+                        <img style="width: 100%; border-radius: 10px;" src="../img/banner1.jpg" alt="">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="height:1px ; width:100% ; background-color: gray;"></span>
+                            <span style="color:gray;margin-left: 10px;">15/4/2026</span>
+                        </div>
+                        <p style="margin-top: 10px;  font-size: 14px;  color: gray;">Về việc đăng ký khối lượng học tập học kỳ phụ năm học 2025-2026</p>
+                    </div>
+                    <div class="block-content">
+                        <img style="width: 100%; border-radius: 10px;" src="../img/banner1.jpg" alt="">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="height:1px ; width:100% ; background-color: gray; color: gray;"></span>
+                            <span style="color:gray;margin-left: 10px;">5/5/2026</span>
+                        </div>
+                        <p style="margin-top: 10px;  font-size: 14px; color: gray;">Về việc nghỉ học</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
 </body>
 </html>
