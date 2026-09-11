@@ -18,22 +18,28 @@
         }
         li{
             list-style: none;
-            margin-left:20px;
-        }
-        div.nav{
-            background-color: #0dcaf0;
             padding : 20px
+        }
+        nav.nav{
+            background-color: #0dcaf0;
+            position: sticky;
+            top:0;
+            z-index: 10;
         }
         
         /* main */
         div.main{
             display : flex;
+            align-items: flex-start;
         }
         div.main-left{
             width : 20%;
-            height : 100vh;
+            
             border-right : 2px solid #0dcaf0;
             padding : 20px;
+            position: sticky;
+            top : 60px;
+            
         }
         form{
             display : flex;
@@ -103,7 +109,7 @@
     <title>Đào Tạo HUMG</title>
 </head>
 <body>
-    <div class="nav">
+    <nav class="nav">
         <ul>
             <li><a href="">Trang chủ</a></li>
             <li><a href="">Thực tập , Đồ án</a></li>
@@ -111,7 +117,7 @@
             <li><a href="">Một cửa online</a></li>
             <li><a href="">E-mail HUMG</a></li>
         </ul>
-    </div>
+    </nav>
     <div class="main">
         <div class="main-left">
             <form action="">
@@ -129,7 +135,7 @@
             </form>
             <a id="home" href="">Trang chủ</a>
             <a id="rate" href="">Khảo sát đánh giá</a>
-            <img src="../img/humg-data.webp" alt="Hình ảnh dữ liệu HUMG" style="width: 70%; margin-top: 220px; margin-left: 15%;">
+            <img src="../img/humg-data.webp" alt="Hình ảnh dữ liệu HUMG" style="width: 70%; margin-top:70px;  margin-left: 15%;">
         </div>
         <div class="main-right">
             <div class="main-right-block">
@@ -156,7 +162,31 @@
                     </div>
                 </div>
             </div>
-
+            <div class="main-right-block">
+                <div class="main-right-block-header">
+                    <p>Thông báo</p>
+                    <a style="color:#0dcaf0" href="">Xem thêm</a>
+                </div>
+                <div class="main-right-block-content">
+                    <div class="block-content">
+                        <img style="width: 100%; border-radius: 10px;" src="../img/banner1.jpg" alt="">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="height:1px ; width:100% ; background-color: gray;"></span>
+                            <span style="color:gray;margin-left: 10px;">15/4/2026</span>
+                        </div>
+                        <p style="margin-top: 10px;  font-size: 14px;  color: gray;">Về việc đăng ký khối lượng học tập học kỳ phụ năm học 2025-2026</p>
+                    </div>
+                    <div class="block-content">
+                        <img style="width: 100%; border-radius: 10px;" src="../img/banner1.jpg" alt="">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="height:1px ; width:100% ; background-color: gray; color: gray;"></span>
+                            <span style="color:gray;margin-left: 10px;">5/5/2026</span>
+                        </div>
+                        <p style="margin-top: 10px;  font-size: 14px; color: gray;">Về việc nghỉ học</p>
+                    </div>
+                </div>
+                
+            </div>
             <div class="main-right-block">
                 <div class="main-right-block-header">
                     <p>Thông báo</p>
