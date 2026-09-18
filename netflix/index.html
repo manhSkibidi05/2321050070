@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #2f2c38;
+            color: white;
+            padding: 20px
+        }
+
+        header,
+        ul,
+        div.chuc-nang {
+            display: flex;
+            align-items: center;
+        }
+
+        header {
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        ul {
+            list-style: none;
+            gap: 5px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #dbdbdd;
+            padding: 8px 10px;
+        }
+
+        a.lien-ket-muc-anh {
+            display: flex;
+            align-items: center;
+            padding: 6px 8px;
+        }
+
+        .logo {
+            width: 90px;
+            height: auto;
+            display: block;
+        }
+
+        a.lien-ket-muc.dang-chon,
+        a.lien-ket-muc:hover {
+            background-color: #4e4b52;
+            border-radius: 20px;
+        }
+
+        .banner {
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .banner img {
+            display: block;
+            width: 100%;
+            height: 520px;
+            border-radius: 16px;
+        }
+
+        .danh-sach-the-loai {
+            margin-top: 20px;
+        }
+
+        .danh-sach-the-loai .the-loai {
+            margin-bottom: 20px;
+        }
+
+        .phim {
+            display: flex;
+        }
+
+        .phim img {
+            width: 25%;
+            height: 300px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="danh-muc">
+            <ul class="danh-sach-muc">
+                <li><a class="lien-ket-muc-anh" href=""><img class="logo" src="./logo-netflix.svg"
+                            alt="Netflix logo"></a></li>
+                <li><a class="lien-ket-muc dang-chon" href="">Trang chủ</a></li>
+                <li><a class="lien-ket-muc" href="">Nhân vật</a></li>
+                <li><a class="lien-ket-muc" href="">Series</a></li>
+                <li><a class="lien-ket-muc" href="">Phim</a></li>
+                <li><a class="lien-ket-muc" href="">Mới & Phổ biến</a></li>
+                <li><a class="lien-ket-muc" href="">Netflix của tôi</a></li>
+                <li><a class="lien-ket-muc" href="">Duyệt tìm theo ngôn ngữ</a></li>
+            </ul>
+        </nav>
+        <div class="chuc-nang">
+            <div class="tim-kiem">
+                <a href="">Search</a>
+            </div>
+            <div class="thong-tin">
+                <a href=""><img src="./avt.jpg" style="width:50%" alt="User avatar"></a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="banner">
+            <img src="./banner.jpg" alt="Netflix banner">
+        </div>
+        <div class="danh-sach-the-loai">
+            <div class="the-loai">
+                <div class="ten-the-loai">
+                    Có thể bạn chưa xem
+                </div>
+                <div class="danh-sach-phim">
+                    <div class="phim">
+                        <img src="./banner.jpg" alt="Netflix banner">
+                        <img src="./banner.jpg" alt="Netflix banner">
+                        <img src="./banner.jpg" alt="Netflix banner">
+                        <img src="./banner.jpg" alt="Netflix banner">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+</body>
+
+</html>
