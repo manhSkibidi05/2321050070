@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 7</title>
+</head>
+
+<body>
+
+    <script src="./app.js"></script>
+    <script>
+        document.writeln('alo');
+
+        // Biến 
+        var name = 'Nguyễn Hoàng MCK';
+        document.writeln(name);
+
+        name = 'adu';
+
+        var year = 2025;
+        document.writeln(year);
+
+        // Toán tử
+        var num1 = 10;
+        var num2 = 20;
+        document.writeln(`Cộng : ${num1 + num2}`);
+        document.writeln(`Trừ : ${num1 - num2}`);
+        document.writeln(`Nhân : ${num1 * num2}`);
+        document.writeln(`Chia : ${num1 / num2}`);
+        document.writeln(`Chia lấy dư : ${num1 % num2}`);
+
+        var sum = num1 + num2;
+        document.writeln(++sum);
+        document.writeln(--sum);
+
+        // Chuỗi 
+        var str = 'Ộ';
+        document.writeln(`${str} i i`);
+        document.writeln(str.length);
+        document.writeln(typeof str);
+
+        const time = new Date();
+        document.writeln(`${time.getHours().toString().padStart(1, '0')} : ${time.getMinutes()} : ${time.getSeconds().toString().padStart(1, '0')}`);
+
+    </script>
+</body>
+
+</html>
