@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // Kiểu Number :
+        so = 10;
+        soThuc = 10.4;
+
+        // Kiểu Date : 
+        const today = new Date();
+        document.writeln(today.getHours() + ':');
+        document.writeln(today.getMinutes() + ':');
+        document.writeln(today.getSeconds() + '<br>');
+
+
+        // Kiểu mảng : 
+        const nums = [1, 2, 3, 4, 5, 6, 7, 8];
+        document.writeln(nums[2]);
+        document.writeln(nums.length)
+
+        const foods = ['bún bò huế', 'bánh canh', 'bún real', 'bánh mì ram ram']
+        // + filter() : Lọc mảng theo điều kiện hàm callback truyền vào
+        document.writeln(foods.filter(val => val.includes('bún')))
+
+        // + map() : Tạo mảng mới dựa trên mảng ban đầu 
+        document.writeln(foods.map(val => val + 'ngon'))
+
+        // Kiểu object : 
+        const ferari = {
+            type: 'car',
+            price: 150000,
+            color: ['red', 'green', 'black'],
+            createAt: {
+                year: 2002,
+                place: 'Italy'
+            }
+        }
+        const audi = {
+            type: 'car',
+            price: 250000,
+            color: ['white', 'green', 'black'],
+            createAt: {
+                year: 2005,
+                place: 'Italy'
+            }
+        }
+        document.writeln(ferari.createAt.year)
+        ferari['stock'] = 2
+        console.log(ferari)
+
+        const cars = [ferari, audi]
+
+        // 2 dấu == : so sánh về mặt giá trị
+        // 3 dấu === : so sánh về cả giá trị và kiểu dữ liệu 
+
+        // Câu lệnh điều kiện if...else 
+        console.log(audi.price > 100000 ? 'Expensive' : 'Cheap')
+
+        console.log(nums.filter(val => val % 2 === 0))
+    </script>
+</body>
+
+</html>
