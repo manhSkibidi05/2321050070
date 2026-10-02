@@ -107,24 +107,47 @@
         } while (j < nums.length)
 
         // Popup alert, confirm, prompt
-        alert('Hello')
-        confirm('Bạn có muốn tiếp tục không ?')
-        let name = prompt('Bạn tên gì ?')
-        console.log(name)
+        // alert('Hello')
+        // confirm('Bạn có muốn tiếp tục không ?')
+        // let name = prompt('Bạn tên gì ?')
 
         // Function : 
         function sum(a, b) {
             return a + b
         }
-        console.log(sum(5, 10))
 
         num1 = prompt('Nhập số thứ nhất')
         num2 = prompt('Nhập số thứ hai')
+
         if (isNaN(num1) || isNaN(num2)) {
             alert('Bạn nhập không phải là số')
         } else {
-            document.writeln(`Tổng là : ${sum(Number(num1), Number(num2))}`)
+            alert(`Tổng là : ${sum(Number(num1), Number(num2))}`)
         }
+
+        // btvn : tính điểm số -> điểm chữ từ điểm cho trước
+        const tinhDiem = (diemA, diemB, diemC) => {
+            if (isNaN(diemA) || isNaN(diemB) || isNaN(diemC)) return null
+            return Number(diemA) * 0.6 + Number(diemB) * 0.3 + Number(diemC) * 0.1
+        }
+
+        const diemA = prompt('Nhập điểm A ')
+        const diemB = prompt('Nhập điểm B ')
+        const diemC = prompt('Nhập điểm C ')
+        const diemSo = tinhDiem(diemA, diemB, diemC)
+
+        const xepLoai = (diemSo) => {
+            if (diemSo === null || isNaN(diemSo)) return null
+            if (diemSo >= 8.5 && diemSo <= 10) return 'A'
+            if (diemSo >= 7 && diemSo < 8.5) return 'B'
+            if (diemSo >= 5.5 && diemSo < 7) return 'C'
+            if (diemSo >= 4 && diemSo < 5.5) return 'D'
+            if (diemSo >= 0 && diemSo < 4) return 'F'
+            return null
+        }
+
+        const diemChu = xepLoai(diemSo)
+        alert(`Điểm số là : ${diemSo}\nĐiểm chữ là ${diemChu}`)
 
     </script>
 </body>
