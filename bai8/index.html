@@ -66,6 +66,66 @@
         console.log(audi.price > 100000 ? 'Expensive' : 'Cheap')
 
         console.log(nums.filter(val => val % 2 === 0))
+
+        // switch...case 
+        let ngay = 'Thứ Hai'
+        switch (ngay) {
+            case 'Thứ Hai':
+                console.log('Hôm nay là thứ 2')
+                break;
+            case 'Thứ Ba':
+                console.log('Hôm nay là thứ 3')
+                break;
+            default:
+                console.log('Hôm nay là thứ khác')
+        }
+
+        // Vòng lặp for
+        for (let i = 0; i < nums.length; i++) {
+            console.log(nums[i])
+        }
+
+        strs = ['a', 'b', 'c', 'd', 'e'].concat(nums)
+        for (let i = 0; i < strs.length; i++) {
+            if (isNaN(strs[i])) {
+                console.log(strs[i])
+            }
+        }
+
+        // Vòng lặp while
+        let i = 0;
+        while (i < nums.length) {
+            console.log(nums[i])
+            i++
+        }
+
+        // Vòng lặp do...while
+        let j = 0;
+        do {
+            console.log(nums[j])
+            j++
+        } while (j < nums.length)
+
+        // Popup alert, confirm, prompt
+        alert('Hello')
+        confirm('Bạn có muốn tiếp tục không ?')
+        let name = prompt('Bạn tên gì ?')
+        console.log(name)
+
+        // Function : 
+        function sum(a, b) {
+            return a + b
+        }
+        console.log(sum(5, 10))
+
+        num1 = prompt('Nhập số thứ nhất')
+        num2 = prompt('Nhập số thứ hai')
+        if (isNaN(num1) || isNaN(num2)) {
+            alert('Bạn nhập không phải là số')
+        } else {
+            document.writeln(`Tổng là : ${sum(Number(num1), Number(num2))}`)
+        }
+
     </script>
 </body>
 
