@@ -8,8 +8,29 @@
 </head>
 
 <body>
-
-
+    <div>
+        <p>Điểm A : </p>
+        <input type="number" name="" id="diemA">
+    </div>
+    <div>
+        <p>Điểm B : </p>
+        <input type="number" name="" id="diemB">
+    </div>
+    <div>
+        <p>Điểm C : </p>
+        <input type="number" name="" id="diemC">
+    </div>
+    <button onclick="tinhDiem()">Tính điểm</button>
+    <div>
+        <p>Điểm chữ là : <span id="diemChu"></span></p>
+        <p>Điểm số là : <span id="diemSo"></span></p>
+    </div>
+    <div>
+        <p>Năm sinh : </p>
+        <input type="text" name="" id="yearBorn">
+    </div>
+    <button onClick="tinhTuoi()">Tính tuổi</button>
+    <p>Số tuổi là : <span id="age"></span></p>
     <script>
         // Kiểu Number :
         so = 10;
@@ -116,25 +137,45 @@
             return a + b
         }
 
-        num1 = prompt('Nhập số thứ nhất')
-        num2 = prompt('Nhập số thứ hai')
+        // num1 = prompt('Nhập số thứ nhất')
+        // num2 = prompt('Nhập số thứ hai')
 
-        if (isNaN(num1) || isNaN(num2)) {
-            alert('Bạn nhập không phải là số')
-        } else {
-            alert(`Tổng là : ${sum(Number(num1), Number(num2))}`)
-        }
+        // if (isNaN(num1) || isNaN(num2)) {
+        //     alert('Bạn nhập không phải là số')
+        // } else {
+        //     alert(`Tổng là : ${sum(Number(num1), Number(num2))}`)
+        // }
 
         // btvn : tính điểm số -> điểm chữ từ điểm cho trước
-        const tinhDiem = (diemA, diemB, diemC) => {
-            if (isNaN(diemA) || isNaN(diemB) || isNaN(diemC)) return null
-            return Number(diemA) * 0.6 + Number(diemB) * 0.3 + Number(diemC) * 0.1
-        }
+        const tinhDiem = () => {
+            const diemNhap = [
+                document.getElementById('diemA').value.trim(),
+                document.getElementById('diemB').value.trim(),
+                document.getElementById('diemC').value.trim()
+            ]
 
-        const diemA = prompt('Nhập điểm A ')
-        const diemB = prompt('Nhập điểm B ')
-        const diemC = prompt('Nhập điểm C ')
-        const diemSo = tinhDiem(diemA, diemB, diemC)
+            if (diemNhap.some(diem => diem === '')) {
+                document.getElementById('diemSo').textContent = 'Vui lòng nhập đầy đủ điểm'
+                document.getElementById('diemChu').textContent = ''
+                return
+            }
+
+            const [diemA, diemB, diemC] = diemNhap.map(Number)
+            const diemHopLe = [diemA, diemB, diemC].every(
+                diem => Number.isFinite(diem) && diem >= 0 && diem <= 10
+            )
+
+            if (!diemHopLe) {
+                document.getElementById('diemSo').textContent = 'Điểm phải là số từ 0 đến 10'
+                document.getElementById('diemChu').textContent = ''
+                return
+            }
+
+            const diemSo = diemA * 0.6 + diemB * 0.3 + diemC * 0.1
+            const diemChu = xepLoai(diemSo)
+            document.getElementById('diemSo').textContent = diemSo
+            document.getElementById('diemChu').textContent = diemChu
+        }
 
         const xepLoai = (diemSo) => {
             if (diemSo === null || isNaN(diemSo)) return null
@@ -146,9 +187,24 @@
             return null
         }
 
-        const diemChu = xepLoai(diemSo)
-        alert(`Điểm số là : ${diemSo}\nĐiểm chữ là ${diemChu}`)
+        const tinhTuoi = () => {
+            const namSinhNhap = document.getElementById('yearBorn').value.trim()
+            const hienTai = new Date().getFullYear()
+            const namSinh = Number(namSinhNhap)
+            const ketQua = document.getElementById('age')
 
+            if (namSinhNhap === '') {
+                ketQua.textContent = 'Vui lòng nhập năm sinh'
+                return
+            }
+
+            if (!Number.isInteger(namSinh) || namSinh < 1 || namSinh > hienTai) {
+                ketQua.textContent = `Năm sinh phải là số nguyên từ 1 đến ${hienTai}`
+                return
+            }
+
+            ketQua.textContent = hienTai - namSinh
+        }
     </script>
 </body>
 
