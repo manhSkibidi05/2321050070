@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .main{
+            background-color: #fff;
+            color: black;
+            transition: all;
+            transition-duration: 1000;
+        }
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .days{
+            display: flex;
+            gap: 5px;
+        }
+        .day{
+            display: block;
+            list-style: none;
+            padding: 20px;
+            border: 1px solid black;
+            border-radius: 10px;
+            
+        }
+    </style>
+    <title>Bài 9</title>
+</head>
+<body class="main">
+    <div>
+        <h2 class="title">Chế độ sáng</h2>
+        <ul class="days">
+            <li class="day">Thứ 2</li>
+            <li class="day">Thứ 3</li>
+            <li class="day">Thứ 4</li>
+            <li class="day">Thứ 5</li>
+            <li class="day">Thứ 6</li>
+            <li class="day">Thứ 7</li>
+            <li class="day">Chủ nhật</li>
+        </ul>
+        <img class="icon" src="./mattroi.png" width="100px" alt="">
+        <button onClick="switchMode()" class="switch">Đổi chế độ</button>
+    </div>
+    
+
+
+    <script>
+        const btnSwitch = document.querySelector('.switch')
+        const icon = document.querySelector('.icon')
+        const title = document.querySelector('.title')
+        const day = document.querySelectorAll('.day')
+
+        const switchMode = () => {
+            if(icon.getAttribute('src') === './mattrang.png'){
+                icon.setAttribute('src','./mattroi.png')
+                title.textContent = 'Chế độ sáng'
+                document.querySelector('.main').style.backgroundColor = 'white' 
+                day.forEach(value => {
+                    value.style.color='black'
+                    value.style.borderColor = 'black'
+                })
+            }else{
+                icon.setAttribute('src','./mattrang.png')
+                title.textContent = 'Chế độ tối'
+                document.querySelector('.main').style.backgroundColor = 'black'
+                day.forEach(value => {
+                    value.style.color='white'
+                    value.style.borderColor = 'white'
+                })
+            }
+            
+        }
+    </script>
+</body>
+</html>
