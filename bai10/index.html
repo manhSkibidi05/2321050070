@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #2f2c38;
+            color: white;
+            padding: 20px
+        }
+
+        .main-screen {
+            width: 100%;
+            height: 400px;
+            background-color: #4e4b52;
+            border-radius: 10px;
+            margin-bottom: 50px;
+        }
+
+        .cards{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card {
+            width: 300px;
+            height: 200px;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    </style>
+    <title>Bài 10</title>
+</head>
+<body>
+    <div class="main-screen">
+        <iframe  width="100%" height="100%" src="https://www.youtube.com/embed/BTMMQZNthzk?si=bxeNBMyKF31wFmIb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <h1>Tiêu đề</h1>
+    </div>
+
+    <div class="cards">
+        <div  class="card">
+            <img onClick="playLink(1)" src="../netflix/img/phim10.jpg" alt="">
+            <p>Naruto</p>
+        </div>
+        <div class="card">
+            <img onClick="playLink(2)" src="../netflix/img/phim11.jpg" alt="">
+            <p>Denji</p>
+        </div>
+        <div class="card">
+            <img onClick="playLink(3)" src="../netflix/img/phim12.jpg" alt="">
+            <p>Eren</p>
+        </div>
+        <div class="card">
+            <img onClick="playLink(4)" src="../netflix/img/phim9.jpg" alt="">
+            <p>Gojo</p>
+        </div>
+    </div>
+    
+    <script>
+        const cardsInfo = [
+            {
+                id : 1 , 
+                name : 'Naruto',
+                link : "https://www.youtube.com/embed/pzt6SmvGpXk?si=7cS2pGhaTNMO2eoE"
+            },
+            {
+                id : 2 ,
+                name : 'Denji',
+                link : "https://www.youtube.com/embed/mlFxxNsExJc?si=4A018OJzaqBSsUIW"
+            },
+            {
+                id : 3 ,
+                name : 'Eren',
+                link : "https://www.youtube.com/embed/r6zIGXun57U?si=XAPFhsimok1vY6X5"
+            },
+            {
+                id : 4 ,
+                name : 'Gojo',
+                link : "https://www.youtube.com/embed/VLvBlG49BKA?si=jojOhQ-cdZP1hXHH"
+            }
+        ];
+
+        const iFrame = document.querySelector('.main-screen iframe');
+        const title = document.querySelector('.main-screen h1');
+
+        const playLink = (id) => {
+            cardsInfo.forEach(value => {
+                if(value.id === id){
+                    iFrame.src = value.link;
+                    title.textContent = value.name
+                }
+            })
+        }
+
+        
+    </script>
+</body>
+</html>
