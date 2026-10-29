@@ -62,14 +62,8 @@
         .banner {
             margin-top: 20px;
             width: 100%;
-        }
-
-        .banner img {
-            display: block;
-            width: 100%;
             height: 520px;
             border-radius: 16px;
-            cursor: pointer; 
         }
 
         .danh-sach-the-loai {
@@ -104,23 +98,6 @@
             object-fit: cover;
         }
 
-        .nhan-vat {
-            display: flex;
-            gap: 10px;
-        }
-
-        .nhan-vat a {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .nhan-vat img {
-            display: block;
-            width: 100%;
-            aspect-ratio: 1;
-            border-radius: 50%;
-            object-fit: cover;
-        }
     </style>
 </head>
 
@@ -150,7 +127,8 @@
     </header>
     <main>
         <div class="banner">
-            <img onClick="test()" src="./img/banner.jpg" alt="Netflix banner">
+            <!-- <img  src="./img/banner.jpg" alt="Netflix banner"> -->
+            <iframe width="100%" height="520" src="https://www.youtube.com/embed/BTMMQZNthzk?si=bxeNBMyKF31wFmIb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         <div class="danh-sach-the-loai">
             <div class="the-loai">
@@ -159,10 +137,11 @@
                 </div>
                 <div class="danh-sach-phim">
                     <div class="phim">
-                        <a href=""><img class="aFilm" src="./img/phim1.jpg" alt="Netflix banner"></a>
-                        <a href=""><img class="aFilm" src="./img/phim2.jpg" alt="Netflix banner"></a>
-                        <a href=""><img class="aFilm" src="./img/phim3.jpg" alt="Netflix banner"></a>
-                        <a href=""><img class="aFilm" src="./img/phim4.jpg" alt="Netflix banner"></a>
+                        <img onClick="changeBanner(1)" class="aFilm" src="./img/phim1.jpg" alt="Netflix banner">
+                        <img onClick="changeBanner(2)" class="aFilm" src="./img/phim2.jpg" alt="Netflix banner">
+                        <img onClick="changeBanner(3)" class="aFilm" src="./img/phim3.jpg" alt="Netflix banner">
+                        <img onClick="changeBanner(4)" class="aFilm" src="./img/phim4.jpg" alt="Netflix banner">
+                        <img onClick="changeBanner(5)" class="aFilm" src="./img/phim5.jpg" alt="Netflix banner">
                     </div>
                 </div>
             </div>
@@ -172,10 +151,11 @@
                 </div>
                 <div class="danh-sach-phim">
                     <div class="phim">
-                        <a href=""><img class="aFilm" src="./img/phim5.jpg" alt="Netflix banner"></a>
-                        <a href=""><img class="aFilm" src="./img/phim6.jpg" alt="Netflix banner"></a>
-                        <a href=""><img class="aFilm" src="./img/phim7.jpg" alt="Netflix banner"></a>
-                        <a href=""><img class="aFilm" src="./img/phim8.jpg" alt="Netflix banner"></a>
+                        <img onClick="changeBanner(6)" class="aFilm" src="./img/phim6.jpg" alt="Netflix banner">
+                        <img onClick="changeBanner(7)" class="aFilm" src="./img/phim7.jpg" alt="Netflix banner">
+                        <img onClick="changeBanner(8)" class="aFilm" src="./img/phim8.jpg" alt="Netflix banner">
+                        <img onClick="changeBanner(9)" class="aFilm" src="./img/phim9.jpg" alt="Netflix banner">
+                        <img onClick="changeBanner(10)" class="aFilm" src="./img/phim10.jpg" alt="Netflix banner">
                     </div>
                 </div>
             </div>
@@ -185,24 +165,39 @@
                 </div>
                 <div class="danh-sach-phim">
                     <div class="phim">
-                        <a href=""><img class="aFilm" src="./img/phim9.jpg" alt="Netflix banner"></a>
-                        <a href=""><img class="aFilm" src="./img/phim10.jpg" alt="Netflix banner"></a>
-                        <a href=""><img class="aFilm" src="./img/phim11.jpg" alt="Netflix banner"></a>
-                        <a href=""><img class="aFilm" src="./img/phim12.jpg" alt="Netflix banner"></a>
+                        <img onClick="changeBanner(11)" class="aFilm" src="./img/phim11.jpg" alt="Netflix banner">
+                        <img onClick="changeBanner(12)" class="aFilm" src="./img/phim12.jpg" alt="Netflix banner">
+                        <img onClick="changeBanner(13)" class="aFilm" src="./img/phim13.jpg" alt="Netflix banner">
+                        <img onClick="changeBanner(14)" class="aFilm" src="./img/phim14.jpg" alt="Netflix banner">
+                        <img onClick="changeBanner(15)" class="aFilm" src="./img/phim15.jpg" alt="Netflix banner">
                     </div>
                 </div>
             </div>
             <div class="the-loai">
                 <div class="ten-the-loai">
-                    Nhân vật nổi bật
+                    Phim tình cảm
                 </div>
-                <div class="danh-sach-nhan-vat">
-                    <div class="nhan-vat">
-                        <a href=""><img src="./img/nhanvat1.jpg" alt="Netflix banner"></a>
-                        <a href=""><img src="./img/nhanvat2.jpg" alt="Netflix banner"></a>
-                        <a href=""><img src="./img/nhanvat3.jpg" alt="Netflix banner"></a>
-                        <a href=""><img src="./img/nhanvat4.jpg" alt="Netflix banner"></a>
-                        <a href=""><img src="./img/nhanvat5.jpg" alt="Netflix banner"></a>
+                <div class="danh-sach-phim">
+                    <div class="phim">
+                        <img onClick="changeBanner(16)" class="aFilm" src="./img/phim16.jpg" alt="Netflix banner">
+                        <img onClick="changeBanner(17)" class="aFilm" src="./img/phim17.jpg" alt="Netflix banner">
+                        <img onClick="changeBanner(18)" class="aFilm" src="./img/phim18.jpg" alt="Netflix banner">
+                        <img onClick="changeBanner(19)" class="aFilm" src="./img/phim19.jpg" alt="Netflix banner">
+                        <img onClick="changeBanner(20)" class="aFilm" src="./img/phim20.jpg" alt="Netflix banner">
+                    </div>
+                </div>
+            </div>
+            <div class="the-loai">
+                <div class="ten-the-loai">
+                    Phim viễn tưởng
+                </div>
+                <div class="danh-sach-phim">
+                    <div class="phim">
+                        <img onClick="changeBanner(21)" class="aFilm" src="./img/phim21.jpg" alt="Netflix banner">
+                        <img onClick="changeBanner(22)" class="aFilm" src="./img/phim22.jpg" alt="Netflix banner">
+                        <img onClick="changeBanner(23)" class="aFilm" src="./img/phim23.jpg" alt="Netflix banner">
+                        <img onClick="changeBanner(24)" class="aFilm" src="./img/phim24.jpg" alt="Netflix banner">
+                        <img onClick="changeBanner(25)" class="aFilm" src="./img/phim25.jpg" alt="Netflix banner">
                     </div>
                 </div>
             </div>
@@ -210,7 +205,7 @@
     </main>
 
     <script>
-        const banner = document.querySelector('.banner')
+        const banner = document.querySelector('.banner iframe');
         
         const listFilm = [
             {
@@ -218,91 +213,185 @@
                 name : 'Phim 1',
                 thoiLuong : '1p',
                 banner : './img/phim1.jpg',
+                link : 'https://www.youtube.com/embed/pzt6SmvGpXk?si=ZOh1N9Q2xh1mam97'
             },
             {
                 id : 2,
                 name : 'Phim 2',
                 thoiLuong : '2p',
-                banner : './img/phim2.jpg'
+                banner : './img/phim2.jpg',
+                link : 'https://www.youtube.com/embed/mlFxxNsExJc?si=FVfzhX_qD00c0AvM'
             },
             {
                 id : 3,
                 name : 'Phim 3',
                 thoiLuong : '3p',
-                banner : './img/phim3.jpg'
+                banner : './img/phim3.jpg',
+                link : 'https://www.youtube.com/embed/QsQmYQlavyo?si=qYub_gNsjhQQQULq'
             },
             {
                 id : 4,
                 name : 'Phim 4',
                 thoiLuong : '4p',
-                banner : './img/phim4.jpg'
+                banner : './img/phim4.jpg',
+                link : 'https://www.youtube.com/embed/9X2143v5v4Q?si=V6J8K9L2M3N4P5Q6'
             },
             {
                 id : 5,
                 name : 'Phim 5',
                 thoiLuong : '5p',
-                banner : './img/phim5.jpg'
+                banner : './img/phim5.jpg',
+                link : 'https://www.youtube.com/embed/pzt6SmvGpXk?si=ZOh1N9Q2xh1mam97'
             },
             {
                 id : 6,
                 name : 'Phim 6',
                 thoiLuong : '6p',
-                banner : './img/phim6.jpg'
+                banner : './img/phim6.jpg',
+                link : 'https://www.youtube.com/embed/mlFxxNsExJc?si=FVfzhX_qD00c0AvM'
             },
             {
                 id : 7,
                 name : 'Phim 7',
                 thoiLuong : '7p',
-                banner : './img/phim7.jpg'
+                banner : './img/phim7.jpg',
+                link : 'https://www.youtube.com/embed/x8jAY2CoOBg?si=0U3luCo46GlJcY_m'
             },
             {
                 id : 8,
                 name : 'Phim 8',
                 thoiLuong : '8p',
-                banner : './img/phim8.jpg'
+                banner : './img/phim8.jpg',
+                link : 'https://www.youtube.com/embed/9X2143v5v4Q?si=V6J8K9L2M3N4P5Q6'
             },
             {
                 id : 9,
                 name : 'Phim 9',
                 thoiLuong : '9p',
-                banner : './img/phim9.jpg'
+                banner : './img/phim9.jpg',
+                link : 'https://www.youtube.com/embed/pzt6SmvGpXk?si=ZOh1N9Q2xh1mam97'
             },
             {
                 id : 10,
                 name : 'Phim 10',
                 thoiLuong : '10p',
-                banner : './img/phim10.jpg'
+                banner : './img/phim10.jpg',
+                link : 'https://www.youtube.com/embed/mlFxxNsExJc?si=FVfzhX_qD00c0AvM'
             },
             {
                 id : 11,
                 name : 'Phim 11',
                 thoiLuong : '11p',
-                banner : './img/phim11.jpg'
+                banner : './img/phim11.jpg',
+                link : 'https://www.youtube.com/embed/x8jAY2CoOBg?si=0U3luCo46GlJcY_m'
             },
             {
                 id : 12,
                 name : 'Phim 12',
                 thoiLuong : '12p',
-                banner : './img/phim12.jpg'
+                banner : './img/phim12.jpg',
+                link : 'https://www.youtube.com/embed/9X2143v5v4Q?si=V6J8K9L2M3N4P5Q6'
+            },
+            {
+                id : 13,
+                name : 'Phim 13',
+                thoiLuong : '13p',
+                banner : './img/phim13.jpg',
+                link : 'https://www.youtube.com/embed/pzt6SmvGpXk?si=ZOh1N9Q2xh1mam97'
+            },
+            {
+                id : 14,
+                name : 'Phim 14',
+                thoiLuong : '14p',
+                banner : './img/phim14.jpg',
+                link : 'https://www.youtube.com/embed/mlFxxNsExJc?si=FVfzhX_qD00c0AvM'
+            },
+            {
+                id : 15,
+                name : 'Phim 15',
+                thoiLuong : '15p',
+                banner : './img/phim15.jpg',
+                link : 'https://www.youtube.com/embed/x8jAY2CoOBg?si=0U3luCo46GlJcY_m'
+            },
+            {
+                id : 16,
+                name : 'Phim 16',
+                thoiLuong : '16p',
+                banner : './img/phim16.jpg',
+                link : 'https://www.youtube.com/embed/9X2143v5v4Q?si=V6J8K9L2M3N4P5Q6'
+            },
+            {
+                id : 17,
+                name : 'Phim 17',
+                thoiLuong : '17p',
+                banner : './img/phim17.jpg',
+                link : 'https://www.youtube.com/embed/pzt6SmvGpXk?si=ZOh1N9Q2xh1mam97'
+            },
+            {
+                id : 18,
+                name : 'Phim 18',
+                thoiLuong : '18p',
+                banner : './img/phim18.jpg',
+                link : 'https://www.youtube.com/embed/mlFxxNsExJc?si=FVfzhX_qD00c0AvM'
+            },
+            {
+                id : 19,
+                name : 'Phim 19',
+                thoiLuong : '19p',
+                banner : './img/phim19.jpg',
+                link : 'https://www.youtube.com/embed/x8jAY2CoOBg?si=0U3luCo46GlJcY_m'
+            },
+            {
+                id : 20,
+                name : 'Phim 20',
+                thoiLuong : '20p',
+                banner : './img/phim20.jpg',
+                link : 'https://www.youtube.com/embed/9X2143v5v4Q?si=V6J8K9L2M3N4P5Q6'
+            },
+            {
+                id : 21,
+                name : 'Phim 21',
+                thoiLuong : '21p',
+                banner : './img/phim21.jpg',
+                link : 'https://www.youtube.com/embed/pzt6SmvGpXk?si=ZOh1N9Q2xh1mam97'
+            },
+            {
+                id : 22,
+                name : 'Phim 22',
+                thoiLuong : '22p',
+                banner : './img/phim22.jpg',
+                link : 'https://www.youtube.com/embed/mlFxxNsExJc?si=FVfzhX_qD00c0AvM'
+            },
+            {
+                id : 23,
+                name : 'Phim 23',
+                thoiLuong : '23p',
+                banner : './img/phim23.jpg',
+                link : 'https://www.youtube.com/embed/x8jAY2CoOBg?si=0U3luCo46GlJcY_m'
+            },
+            {
+                id : 24,
+                name : 'Phim 24',
+                thoiLuong : '24p',
+                banner : './img/phim24.jpg',
+                link : 'https://www.youtube.com/embed/9X2143v5v4Q?si=V6J8K9L2M3N4P5Q6'
+            },
+            {
+                id : 25,
+                name : 'Phim 25',
+                thoiLuong : '25p',
+                banner : './img/phim25.jpg',
+                link : 'https://www.youtube.com/embed/pzt6SmvGpXk?si=ZOh1N9Q2xh1mam97'
             }
         ]
-        const films = document.querySelectorAll('.aFilm')
-
-        films.forEach((film, index) => {
-            film.addEventListener('click', (e) => {
-                e.preventDefault()
-                const bannerImg = document.createElement('img')
-                bannerImg.setAttribute('alt', 'Netflix banner')
-                bannerImg.setAttribute('src', listFilm[index].banner)
-                bannerImg.addEventListener('click' , test)
-                banner.innerHTML = ''
-                banner.appendChild(bannerImg)
+        function changeBanner(id) {
+            listFilm.forEach(film => {
+                if(film.id === id) {
+                    banner.src = film.link;
+                }
             })
-        })
-
-        const test = () => {
-            banner.innerHTML = '<iframe width="100%" height="520" src="https://www.youtube.com/embed/BTMMQZNthzk?si=bxeNBMyKF31wFmIb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
         }
+        
     </script>
 </body>
 
