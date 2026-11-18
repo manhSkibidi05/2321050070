@@ -1,8 +1,33 @@
-<?php 
+<?php
     session_start();
-    // Code for handling login logic would go here
+    include 'connect.php';
 
-    
+    $message = '';
+    $messageType = '';
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $username = trim($_POST['username'] ?? '');
+        $password = $_POST['password'] ?? '';
+
+        $sql = "SELECT id, ten_dang_nhap FROM nguoi_dung
+                WHERE ten_dang_nhap = ? AND mat_khau = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('ss', $username, $password);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result && $result->num_rows > 0) {
+            $user = $result->fetch_assoc();
+            $_SESSION['username'] = $user['ten_dang_nhap'];
+            header ("Location: index.php");
+            exit();
+        } else {
+            $message = 'Đăng nhập thất bại';
+            $messageType = 'error';
+        }
+
+        $stmt->close();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,6 +68,20 @@
         input[type="submit"]:hover {
             background-color: #45a049;
         }
+        .message {
+            margin-top: 15px;
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .success {
+            color: #155724;
+            background-color: #d4edda;
+        }
+        .error {
+            color: #721c24;
+            background-color: #f8d7da;
+        }
     </style>
     <title>Document</title>
 </head>
@@ -55,19 +94,10 @@
         <input type="password" id="password" name="password" required><br><br>
         <input type="submit" value="Login">
     </form>
-    <?php 
-        $username = isset($_POST['username']) ? $_POST['username'] : '';
-        $password = isset($_POST['password']) ? $_POST['password'] : '';
-        
-        if(!empty($username) && !empty($password)) {
-            echo "<p>Login successful!</p>";
-            echo "Username: " . $username . "<br>";
-            echo "Password: " . $password . "<br>";
-        } else {
-            echo "<p>Please enter both username and password.</p>";
-        }
-        
-        
-    ?>
+    <?php if ($message !== ''): ?>
+        <div class="message <?= htmlspecialchars($messageType) ?>">
+            <?= htmlspecialchars($message) ?>
+        </div>
+    <?php endif; ?>
 </body>
 </html>

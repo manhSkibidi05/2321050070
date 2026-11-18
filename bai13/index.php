@@ -1,16 +1,76 @@
-<?php 
-
+<?php
     session_start();
-    $_SESSION['username'] = 'Moy';
-    echo "Session variable 'username' is set to: " . $_SESSION['username'];
-
-    // cookieName: Tên cookie	Tên định danh của cookie (ví dụ: "user", "theme").  
-    // sẽ dùng tên này để gọi lại cookie bằng lệnh $_COOKIE[$cookieName].
-    // $cookieValue: Giá trị cookie	Nội dung dữ liệu  muốn lưu trữ (ví dụ: "JohnDoe", "dark_mode").
-    //  Giá trị này được lưu dưới dạng chuỗi (string).
-    //  time() + 86400:	Thời gian hết hạn. Xác định thời điểm cookie tự động xóa. 
-    // time() lấy thời gian hiện tại tính bằng giây, cộng thêm 86400 giây (tương đương 24 giờ hoặc 1 ngày). 
-    // Nếu không đặt tham số này, cookie sẽ mất ngay khi đóng trình duyệt.
-    // "/":	Đường dẫn áp dụng	Đường dẫn trên máy chủ mà cookie có hiệu lực. 
-    // Dấu gạch chéo / nghĩa là cookie này sẽ có tác dụng trên toàn bộ trang web (tất cả các thư mục và trang con)
-?> 
+    include 'connect.php';
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 10px;
+        }
+        nav ul li {
+            float: left;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #111;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.php?page_layout=trangChu.php">Trang chủ</a></li>
+            <li><a href="index.php?page_layout=taiKhoan.php">Tài khoản</a></li>
+            <li><a href="index.php?page_layout=danhMuc.php">Danh mục</a></li>
+            <li><a href="index.php?page_layout=phim.php">Phim</a></li>
+        </ul>
+    </nav>
+    <?php 
+        if(isset($_GET['page_layout'])) {
+            switch($_GET['page_layout']) {
+                case 'trangChu.php':
+                    include 'trangChu.php';
+                    break;
+                case 'taiKhoan.php':
+                    include 'taiKhoan.php';
+                    break;
+                case 'danhMuc.php':
+                    include 'danhMuc.php';
+                    break;
+                case 'phim.php':
+                    include 'phim.php';
+                    break;
+                case '.php':
+                    include '.php';
+                    break;
+                default:
+                    include 'trangChu.php';
+            }
+        } else {
+            include 'trangChu.php';
+        }
+    ?>
+</body>
+</html>
