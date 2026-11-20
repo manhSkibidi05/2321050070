@@ -83,6 +83,7 @@
             background-color: #f8d7da;
         }
     </style>
+    <link rel="stylesheet" href="admin.css">
     <title>Document</title>
 </head>
 <body>

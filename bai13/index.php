@@ -36,6 +36,7 @@
             background-color: #111;
         }
     </style>
+    <link rel="stylesheet" href="admin.css">
     <title>Document</title>
 </head>
 <body>
@@ -62,8 +63,14 @@
                 case 'phim.php':
                     include 'phim.php';
                     break;
-                case '.php':
-                    include '.php';
+                case 'themTaiKhoan.php':
+                    include 'themTaiKhoan.php';
+                    break;
+                case 'xoaTaiKhoan.php':
+                    include 'xoaTaiKhoan.php';
+                    break; 
+                case 'capNhatTaiKhoan.php':
+                    include 'capNhatTaiKhoan.php';
                     break;
                 default:
                     include 'trangChu.php';

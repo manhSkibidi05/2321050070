@@ -11,18 +11,36 @@
         }
         div{
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
         }
         
         a.btn{
             display: inline-block;
-            margin: 20px auto;
             padding: 10px 20px;
             background-color: #4CAF50;
             color: white;
             text-decoration: none;
             border-radius: 4px;
+        }
+        a.btn-update{
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #2196F3;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        a.btn-delete{
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #f44336;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        a:hover{
+            opacity: 0.8;
         }
         table {
             width: 80%;
@@ -43,7 +61,7 @@
 <body>
     <div>
         <h1>Danh sách Tài khoản</h1>
-        <a class="btn" href="themTaiKhoan.php">Thêm Tài Khoản</a>
+        <a class="btn" href="index.php?page_layout=themTaiKhoan.php">Thêm Tài Khoản</a>
     </div>
     <table>
         <tr>
@@ -52,6 +70,8 @@
             <th>Họ tên</th>
             <th>Số điện thoại</th>
             <th>Ngày sinh</th>
+            <th>Giới tính</th>
+            <th>Hành động</th>
         </tr>
         <tr>
             <?php
@@ -66,7 +86,13 @@
                 <td><?php echo $row['ho_ten']; ?></td>
                 <td><?php echo $row['so_dien_thoai']; ?></td>
                 <td><?php echo $row['ngay_sinh']; ?></td>
+                <td><?php echo $row['gioi_tinh'] == 1 ? 'Nam' : 'Nữ'; ?></td>
+                <td>
+                    <a class="btn-update" href="index.php?page_layout=capNhatTaiKhoan.php&id=<?php echo $row['id']; ?>">Sửa</a> |
+                    <a class="btn-delete" href="index.php?page_layout=xoaTaiKhoan.php&id=<?php echo $row['id']; ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa tài khoản này?')">Xóa</a>
+                </td>
             </tr>
+            
             <?php
                     }
                 } else {
