@@ -118,6 +118,45 @@ body > h2 {
     font-size: 30px;
 }
 
+.admin-grid {
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(140px, 1fr));
+    width: min(1120px, calc(100% - 48px));
+    margin: 48px auto 28px;
+}
+
+.stat-card {
+    min-width: 0;
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--surface);
+}
+
+.stat-label {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.stat-number {
+    display: block;
+    color: var(--text);
+    font-size: 34px;
+    line-height: 1;
+}
+
+td small {
+    display: inline-block;
+    max-width: 380px;
+    margin-top: 5px;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
 body > div {
     display: flex;
     flex-wrap: wrap;
@@ -343,5 +382,11 @@ body > .message.error {
     form {
         width: calc(100% - 32px) !important;
         padding: 22px !important;
+    }
+
+    .admin-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: calc(100% - 32px);
+        margin: 32px auto 20px;
     }
 }

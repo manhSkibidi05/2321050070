@@ -37,7 +37,7 @@
         }
     </style>
     <link rel="stylesheet" href="admin.css">
-    <title>Document</title>
+    <title>Quản trị Cinema</title>
 </head>
 <body>
     <nav>
