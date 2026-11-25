@@ -1,5 +1,6 @@
 <div>
     <h1>Danh sách phim</h1>
+    <a class="btn" href="index.php?page_layout=themPhim.php">Thêm phim</a>
 </div>
 
 <table>
@@ -12,6 +13,7 @@
             <th>Đạo diễn</th>
             <th>Độ tuổi</th>
             <th>Danh mục</th>
+            <th>Hành động</th>
         </tr>
     </thead>
     <tbody>
@@ -30,6 +32,7 @@
 
             if ($result && $result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
+                    $year = date('Y', strtotime($row['nam']));
         ?>
             <tr>
                 <td><?= (int) $row['id'] ?></td>
@@ -39,19 +42,21 @@
                         <br><small><?= htmlspecialchars($row['mo_ta']) ?></small>
                     <?php endif; ?>
                 </td>
-                <td><?= htmlspecialchars($row['nam']) ?></td>
+                <td><?= htmlspecialchars($year) ?></td>
                 <td><?= htmlspecialchars($row['quoc_gia']) ?></td>
                 <td><?= htmlspecialchars($row['ho_ten']) ?></td>
                 <td><?= (int) $row['do_tuoi'] ?>+</td>
                 <td><?= htmlspecialchars($row['danh_muc'] ?? 'Chưa phân loại') ?></td>
+                <td>
+                    <a class="btn-update" href="index.php?page_layout=capNhatPhim.php&id=<?= (int) $row['id'] ?>">Sửa</a>
+                    <a class="btn-delete" href="index.php?page_layout=xoaPhim.php&id=<?= (int) $row['id'] ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa phim này?')">Xóa</a>
+                </td>
             </tr>
         <?php
                 }
             } else {
         ?>
-            <tr>
-                <td colspan="7">Chưa có phim nào.</td>
-            </tr>
+            <tr><td colspan="8">Chưa có phim nào.</td></tr>
         <?php } ?>
     </tbody>
 </table>

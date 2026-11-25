@@ -72,6 +72,24 @@
                 case 'capNhatTaiKhoan.php':
                     include 'capNhatTaiKhoan.php';
                     break;
+                case 'themDanhMuc.php':
+                    include 'themDanhMuc.php';
+                    break;
+                case 'xoaDanhMuc.php':
+                    include 'xoaDanhMuc.php';
+                    break;
+                case 'capNhatDanhMuc.php':
+                    include 'capNhatDanhMuc.php';
+                    break;
+                case 'themPhim.php':
+                    include 'themPhim.php';
+                    break;
+                case 'xoaPhim.php':
+                    include 'xoaPhim.php';
+                    break;
+                case 'capNhatPhim.php':
+                    include 'capNhatPhim.php';
+                    break;
                 default:
                     include 'trangChu.php';
             }

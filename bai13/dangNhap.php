@@ -44,6 +44,9 @@
             align-items: center;
             height: 100vh;
         }
+        h2{
+            text-align:center;
+        }
         form {
             background-color: #fff;
             padding: 20px;
