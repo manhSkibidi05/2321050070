@@ -13,20 +13,21 @@
             <th>Đạo diễn</th>
             <th>Độ tuổi</th>
             <th>Danh mục</th>
+            <th>Ảnh</th>
             <th>Hành động</th>
         </tr>
     </thead>
     <tbody>
         <?php
             $sql = "SELECT p.id, p.ten_phim, p.nam, p.quoc_gia,
-                           p.do_tuoi, p.mo_ta, dd.ho_ten,
+                           p.do_tuoi, p.mo_ta, dd.ho_ten, p.anh,
                            GROUP_CONCAT(DISTINCT tl.ten_the_loai SEPARATOR ', ') AS danh_muc
                     FROM phim p
                     JOIN dao_dien dd ON dd.id = p.dao_dien_id
                     LEFT JOIN phim_the_loai ptl ON ptl.phim_id = p.id
                     LEFT JOIN the_loai tl ON tl.id = ptl.the_loai_id
                     GROUP BY p.id, p.ten_phim, p.nam, p.quoc_gia,
-                             p.do_tuoi, p.mo_ta, dd.ho_ten
+                             p.do_tuoi, p.mo_ta, dd.ho_ten, p.anh
                     ORDER BY p.id DESC";
             $result = $conn->query($sql);
 
@@ -47,6 +48,13 @@
                 <td><?= htmlspecialchars($row['ho_ten']) ?></td>
                 <td><?= (int) $row['do_tuoi'] ?>+</td>
                 <td><?= htmlspecialchars($row['danh_muc'] ?? 'Chưa phân loại') ?></td>
+                <td>
+                    <?php if (!empty($row['anh']) && file_exists($row['anh'])): ?>
+                        <img src="<?= htmlspecialchars($row['anh']) ?>" alt="<?= htmlspecialchars($row['ten_phim']) ?>" style="max-width: 100px; max-height: 100px;">
+                    <?php else: ?>
+                        <span>Chưa có ảnh</span>
+                    <?php endif; ?>
+                </td>
                 <td>
                     <a class="btn-update" href="index.php?page_layout=capNhatPhim.php&id=<?= (int) $row['id'] ?>">Sửa</a>
                     <a class="btn-delete" href="index.php?page_layout=xoaPhim.php&id=<?= (int) $row['id'] ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa phim này?')">Xóa</a>
